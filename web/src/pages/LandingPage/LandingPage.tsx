@@ -6,7 +6,7 @@ const LandingPage = () => {
     <>
       <Metadata title="Landing" description="Landing page" />
 
-      <h1>LandingPage</h1>
+      <h1 className="text-2xl text-green-600">LandingPage</h1>
       <p>
         Find me in <code>./web/src/pages/LandingPage/LandingPage.tsx</code>
       </p>
