@@ -1,5 +1,3 @@
-// import { Link, routes } from '@redwoodjs/router'
-import { Carousel } from '@mantine/carousel'
 import {
   Menu,
   Button,
@@ -26,61 +24,8 @@ import MenuIcon from '@mui/icons-material/Menu'
 import TimeToLeaveIcon from '@mui/icons-material/TimeToLeave'
 import XIcon from '@mui/icons-material/X'
 
-import { navigate, routes } from '@redwoodjs/router'
-
-import CarCard from 'src/components/CarCard/CarCard'
-import { customNavigate } from 'src/utils/prelineHandler'
-
-const LandingPage = () => {
+const Header = () => {
   const [opened, { open, close }] = useDisclosure(false)
-
-  // Dummy data
-  const cars = [
-    {
-      id: 1,
-      name: '2021 BMW M4',
-      price: 'R1,200,000',
-      finance: 'R18,000',
-      mileage: '25,000 km',
-      gearbox: 'Automatic',
-      fuel: 'Petrol',
-      image:
-        'https://www.exclusiveautomotivegroup.com/imagetag/3239/main/l/Used-2021-BMW-M4-Competition-1657047662.jpg',
-    },
-    {
-      id: 2,
-      name: '2022 Toyota Hilux',
-      price: 'R850,000',
-      finance: 'R8,000',
-      mileage: '15,000 km',
-      gearbox: 'Automatic',
-      fuel: 'Diesel',
-      image:
-        'https://www.exclusiveautomotivegroup.com/imagetag/3239/4/l/Used-2021-BMW-M4-Competition-1657047663.jpg',
-    },
-    {
-      id: 3,
-      name: '2023 Audi A3',
-      price: 'R600,000',
-      finance: 'R7,000',
-      mileage: '8,000 km',
-      gearbox: 'Manual',
-      fuel: 'Petrol',
-      image:
-        'https://www.exclusiveautomotivegroup.com/imagetag/3239/4/l/Used-2021-BMW-M4-Competition-1657047663.jpg',
-    },
-    {
-      id: 4,
-      name: '2023 Audi A3',
-      price: 'R600,000',
-      finance: 'R7,000',
-      mileage: '8,000 km',
-      gearbox: 'Manual',
-      fuel: 'Petrol',
-      image:
-        'https://www.exclusiveautomotivegroup.com/imagetag/3239/4/l/Used-2021-BMW-M4-Competition-1657047663.jpg',
-    },
-  ]
 
   const menuLinks = [
     {
@@ -174,14 +119,85 @@ const LandingPage = () => {
   })
 
   return (
-    <div className="container mx-auto">
-      <div className="grid grid-cols-1 gap-5 md:grid-cols-3 lg:grid-cols-4">
-        {cars.map((car) => (
-          <CarCard key={car.id} car={car} />
-        ))}
+    <div className="bg-primary">
+      <div className="container mx-auto flex items-center justify-between gap-2 p-5">
+        <h1 className="rounded-lg bg-primary px-5 py-2 text-2xl font-bold text-white">
+          Logo
+        </h1>
+        {/* Menu for large screens */}
+        <div className="hidden md:block">
+          <div className="flex items-center gap-3">{items}</div>
+        </div>
+
+        {/* Menu for mobile */}
+        <div className="block md:hidden">
+          <Button
+            variant="transparent"
+            color="#B40001"
+            className="px-0"
+            onClick={open}
+          >
+            <MenuIcon />
+          </Button>
+          <Drawer
+            opened={opened}
+            onClose={close}
+            size="80%"
+            withCloseButton={false}
+            overlayProps={{ backgroundOpacity: 0.5, blur: 4 }}
+            transitionProps={{
+              transition: 'rotate-left',
+              duration: 150,
+              timingFunction: 'linear',
+            }}
+            styles={{
+              header: {
+                backgroundColor: '#2F2F2F',
+              },
+              content: {
+                backgroundColor: '#2F2F2F',
+              },
+            }}
+          >
+            <div className="flex h-[95vh] w-full flex-col justify-between">
+              {/* Menu list */}
+              <div>
+                <div className="flex-center-between mb-5 rounded-lg bg-primary px-5 py-2">
+                  <h1 className="text-2xl font-bold text-secondary">Logo</h1>
+
+                  <Button
+                    variant="transparent"
+                    color="#2F2F2F"
+                    className="px-0"
+                    onClick={close}
+                  >
+                    <CloseIcon />
+                  </Button>
+                </div>
+                <div className="flex flex-col gap-3">{items}</div>
+              </div>
+
+              {/* Social platforms */}
+              <div className="flex-center-between gap-2 border-t border-gray-400 pt-3 text-slate-400">
+                <p className="text-dark-400 text-sm">
+                  © {new Date().getFullYear()} <strong>CAR DEALERSHIP.</strong>{' '}
+                  ALL RIGHTS RESERVED.
+                </p>
+                <div>
+                  <FacebookIcon className="custom-transition hover:cursor-pointer hover:text-primary" />
+                  <InstagramIcon className="custom-transition  hover:cursor-pointer hover:text-primary" />
+                  <XIcon
+                    fontSize="small"
+                    className="custom-transition hover:cursor-pointer hover:text-primary"
+                  />
+                </div>
+              </div>
+            </div>
+          </Drawer>
+        </div>
       </div>
     </div>
   )
 }
 
-export default LandingPage
+export default Header

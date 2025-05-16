@@ -11,3 +11,21 @@
 /**
  * END --- SETUP TAILWINDCSS EDIT
  */
+
+ .custom-transition {
+  transition: all 150ms ease;
+  transition-delay: 75ms;
+}
+
+.flex-center-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-center-center {
+  display: flex;
+  align-items: center;
+  justify-content: space-center;
+}
+

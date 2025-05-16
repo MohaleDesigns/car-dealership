@@ -24,5 +24,19 @@
   "packageManager": "yarn@4.6.0",
   "resolutions": {
     "@storybook/react-dom-shim@npm:7.6.20": "https://verdaccio.tobbe.dev/@storybook/react-dom-shim/-/react-dom-shim-8.0.8.tgz"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mantine/carousel": "^8.0.0",
+    "@mantine/core": "^7.17.7",
+    "@mantine/form": "^7.17.7",
+    "@mantine/hooks": "^7.17.7",
+    "@mui/icons-material": "^7.0.2",
+    "@mui/material": "^7.0.2",
+    "@types/react": "^19.1.2",
+    "embla-carousel-react": "^7.1.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   }
 }
