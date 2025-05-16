@@ -14,17 +14,13 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: '#6FB203',
-        secondary: '#212121',
-        tertiary: '#7F7F7F',
-        darkGreen: '#1C6547',
-        customBlack: '#1D1D1B',
-        customWhite: '#FFFFF1',
+        primary: '#002C5E',
+        secondary: '#DD1B22',
+        tertiary: '#004ADE',
       },
-      // fontFamily: {
-      //   Montserrat: ['Montserrat', 'sans-serif'],
-      //   Caveat: ['Caveat', 'cursive'],
-      // },
+      fontFamily: {
+        Montserrat: ['Montserrat', 'sans-serif'],
+      },
     },
   },
   plugins: [],
