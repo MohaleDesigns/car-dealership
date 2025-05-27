@@ -8,7 +8,7 @@ import Logo from '../../assets/images/weeleegreen.png'
 const Footer = () => {
   return (
     <div className="bg-primary">
-      <div className="md:py28 container mx-auto space-y-8 px-5 py-20 md:grid md:grid-cols-5 md:gap-10">
+      <div className="md:py28 container mx-auto flex flex-col gap-8 px-5 py-20 md:grid md:grid-cols-5 md:gap-10">
         <div className="col-span-2">
           <img alt="logo" src={Logo} className="mb-5" />
           <Text className="mb-2 text-sm font-medium text-white">
