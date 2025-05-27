@@ -1,28 +1,19 @@
-import {
-  Menu,
-  Button,
-  Flex,
-  Drawer,
-  Image,
-  Card,
-  Text,
-  Badge,
-  Title,
-  TextInput,
-} from '@mantine/core'
+import { Menu, Button, Drawer } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
-import AccessTimeIcon from '@mui/icons-material/AccessTime'
 import ApartmentIcon from '@mui/icons-material/Apartment'
+import CallIcon from '@mui/icons-material/Call'
 import CloseIcon from '@mui/icons-material/Close'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import FacebookIcon from '@mui/icons-material/Facebook'
 import InstagramIcon from '@mui/icons-material/Instagram'
 import InventoryIcon from '@mui/icons-material/Inventory'
 import LiveHelpIcon from '@mui/icons-material/LiveHelp'
-import LocalGasStationOutlinedIcon from '@mui/icons-material/LocalGasStationOutlined'
+import LoginIcon from '@mui/icons-material/Login'
 import MenuIcon from '@mui/icons-material/Menu'
 import TimeToLeaveIcon from '@mui/icons-material/TimeToLeave'
 import XIcon from '@mui/icons-material/X'
+
+import Logo from '../../assets/images/weeleegreen.png'
 
 const Header = () => {
   const [opened, { open, close }] = useDisclosure(false)
@@ -92,9 +83,8 @@ const Header = () => {
           <Menu.Target>
             <a
               href={link.link}
-              className={`custom-transition flex items-center justify-between rounded-lg border border-white px-2.5 py-2 text-start text-sm text-white decoration-transparent hover:cursor-pointer hover:bg-darkGreen/20 focus:bg-slate-200  focus:text-slate-600 xl:text-base`}
+              className={`custom-transition text-start text-sm hover:cursor-pointer ${opened ? 'text-white/80 hover:text-white/50' : 'text-primary hover:text-primary/80'}`}
             >
-              {link.icon}
               <div className="flex items-center">
                 {link.label}
                 <ExpandMoreIcon />
@@ -110,90 +100,89 @@ const Header = () => {
       <a
         key={link.label}
         href={link.link}
-        className="custom-transition flex items-center justify-between gap-2 rounded-lg border border-white px-3 py-2 text-sm text-white decoration-transparent hover:cursor-pointer hover:bg-darkGreen/20 focus:bg-slate-200 focus:text-slate-600 xl:text-base"
+        className={`custom-transition text-sm hover:cursor-pointer ${opened ? 'text-white/80 hover:text-white/50' : 'text-primary hover:text-primary/80'}`}
       >
-        {link.icon}
         {link.label}
       </a>
     )
   })
 
   return (
-    <div className="bg-primary">
-      <div className="container mx-auto flex items-center justify-between gap-2 p-5">
-        <h1 className="rounded-lg bg-primary px-5 py-2 text-2xl font-bold text-white">
-          Logo
-        </h1>
-        {/* Menu for large screens */}
-        <div className="hidden md:block">
-          <div className="flex items-center gap-3">{items}</div>
+    <div className="bg-white ">
+      <div className="container mx-auto">
+        <div className="flex items-center justify-center gap-1 px-5 pt-5 md:justify-end ">
+          <button className="custom-transition px-5 py-2 text-sm text-primary hover:text-primary/80">
+            <CallIcon fontSize="small" className="" /> 0800 800 888
+          </button>
+          <button className="custom-transition rounded-lg border border-primary px-5 py-2 text-sm text-primary hover:bg-primary hover:text-white">
+            <LoginIcon fontSize="small" className="" /> Login
+          </button>
         </div>
 
-        {/* Menu for mobile */}
-        <div className="block md:hidden">
-          <Button
-            variant="transparent"
-            color="#B40001"
-            className="px-0"
-            onClick={open}
-          >
-            <MenuIcon />
-          </Button>
-          <Drawer
-            opened={opened}
-            onClose={close}
-            size="80%"
-            withCloseButton={false}
-            overlayProps={{ backgroundOpacity: 0.5, blur: 4 }}
-            transitionProps={{
-              transition: 'rotate-left',
-              duration: 150,
-              timingFunction: 'linear',
-            }}
-            styles={{
-              header: {
-                backgroundColor: '#2F2F2F',
-              },
-              content: {
-                backgroundColor: '#2F2F2F',
-              },
-            }}
-          >
-            <div className="flex h-[95vh] w-full flex-col justify-between">
-              {/* Menu list */}
-              <div>
-                <div className="flex-center-between mb-5 rounded-lg bg-primary px-5 py-2">
-                  <h1 className="text-2xl font-bold text-secondary">Logo</h1>
+        <div className="flex items-center justify-between gap-2 p-5">
+          <img alt="logo" src={Logo} className="w-40 md:w-48" />
 
-                  <Button
-                    variant="transparent"
-                    color="#2F2F2F"
-                    className="px-0"
-                    onClick={close}
-                  >
-                    <CloseIcon />
-                  </Button>
-                </div>
-                <div className="flex flex-col gap-3">{items}</div>
-              </div>
+          {/* Menu for large screens */}
+          <div className="hidden md:block">
+            <div className="flex items-center gap-5">{items}</div>
+          </div>
 
-              {/* Social platforms */}
-              <div className="flex-center-between gap-2 border-t border-gray-400 pt-3 text-slate-400">
-                <p className="text-dark-400 text-sm">
-                  © {new Date().getFullYear()} <strong>CAR DEALERSHIP.</strong>{' '}
-                  ALL RIGHTS RESERVED.
-                </p>
+          {/* Menu for mobile */}
+          <div className="block md:hidden">
+            <Button
+              variant="transparent"
+              className="px-0 text-primary"
+              onClick={open}
+            >
+              <MenuIcon fontSize="medium" />
+            </Button>
+            <Drawer
+              opened={opened}
+              onClose={close}
+              size="80%"
+              withCloseButton={false}
+              overlayProps={{ backgroundOpacity: 0.5, blur: 4 }}
+              transitionProps={{
+                transition: 'rotate-left',
+                duration: 150,
+                timingFunction: 'linear',
+              }}
+              styles={{
+                header: {
+                  backgroundColor: '#002C5E',
+                },
+                content: {
+                  backgroundColor: '#002C5E',
+                },
+              }}
+            >
+              <div className="flex h-[95vh] w-full flex-col justify-between">
+                {/* Menu list */}
                 <div>
-                  <FacebookIcon className="custom-transition hover:cursor-pointer hover:text-primary" />
-                  <InstagramIcon className="custom-transition  hover:cursor-pointer hover:text-primary" />
-                  <XIcon
-                    fontSize="small"
-                    className="custom-transition hover:cursor-pointer hover:text-primary"
-                  />
+                  <div className="mb-8 flex items-center justify-between">
+                    <img alt="logo" src={Logo} className="w-36" />
+
+                    <Button
+                      variant="transparent"
+                      className="px-0 text-white/50"
+                      onClick={close}
+                    >
+                      <CloseIcon />
+                    </Button>
+                  </div>
+                  <div className="flex flex-col gap-5">{items}</div>
+                </div>
+
+                {/* Social platforms */}
+                <div className="border-t border-white/20 pt-3">
+                  <p className="text-xs text-white/50">
+                    © {new Date().getFullYear()}{' '}
+                    <strong>CAR DEALERSHIP.</strong> ALL RIGHTS RESERVED.
+                  </p>
                 </div>
               </div>
-            </div>
-          </Drawer>
+            </Drawer>
+          </div>
         </div>
       </div>
     </div>
