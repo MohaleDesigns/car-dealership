@@ -15,8 +15,9 @@ module.exports = {
     extend: {
       colors: {
         primary: '#002C5E',
-        secondary: '#DD1B22',
-        tertiary: '#004ADE',
+        secondary: '#11BEA7',
+        blue: '#004ADE',
+        red: '#DD1B22',
       },
       fontFamily: {
         Montserrat: ['Montserrat', 'sans-serif'],

@@ -1,3 +1,4 @@
+import Footer from 'src/components/Footer/Footer'
 import Fotter from 'src/components/Fotter/Fotter'
 import Header from 'src/components/Header/Header'
 
@@ -10,7 +11,7 @@ const PublicLayout = ({ children }: PublicLayoutProps) => {
     <>
       <Header />
       {children}
-      <Fotter />
+      <Footer />
     </>
   )
 }

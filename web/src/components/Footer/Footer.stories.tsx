@@ -12,15 +12,15 @@
 
 import type { Meta, StoryObj } from '@storybook/react'
 
-import Fotter from './Fotter'
+import Footer from './Footer'
 
-const meta: Meta<typeof Fotter> = {
-  component: Fotter,
+const meta: Meta<typeof Footer> = {
+  component: Footer,
   tags: ['autodocs'],
 }
 
 export default meta
 
-type Story = StoryObj<typeof Fotter>
+type Story = StoryObj<typeof Footer>
 
 export const Primary: Story = {}
