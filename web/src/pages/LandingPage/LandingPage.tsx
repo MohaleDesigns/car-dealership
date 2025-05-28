@@ -28,6 +28,7 @@ import XIcon from '@mui/icons-material/X'
 
 import { navigate, routes } from '@redwoodjs/router'
 
+import BrandsCard from 'src/components/BrandsCard/BrandsCard'
 import CarCard from 'src/components/CarCard/CarCard'
 import { customNavigate } from 'src/utils/prelineHandler'
 
@@ -147,7 +148,7 @@ const LandingPage = () => {
           <Menu.Target>
             <a
               href={link.link}
-              className={`custom-transition flex items-center justify-between rounded-lg border border-white px-2.5 py-2 text-start text-sm text-white decoration-transparent hover:cursor-pointer hover:bg-darkGreen/20 focus:bg-slate-200  focus:text-slate-600 xl:text-base`}
+              className={`custom-transition hover:bg-darkGreen/20 flex items-center justify-between rounded-lg border border-white px-2.5 py-2 text-start text-sm text-white decoration-transparent hover:cursor-pointer focus:bg-slate-200  focus:text-slate-600 xl:text-base`}
             >
               {link.icon}
               <div className="flex items-center">
@@ -165,7 +166,7 @@ const LandingPage = () => {
       <a
         key={link.label}
         href={link.link}
-        className="custom-transition flex items-center justify-between gap-2 rounded-lg border border-white px-3 py-2 text-sm text-white decoration-transparent hover:cursor-pointer hover:bg-darkGreen/20 focus:bg-slate-200 focus:text-slate-600 xl:text-base"
+        className="custom-transition hover:bg-darkGreen/20 flex items-center justify-between gap-2 rounded-lg border border-white px-3 py-2 text-sm text-white decoration-transparent hover:cursor-pointer focus:bg-slate-200 focus:text-slate-600 xl:text-base"
       >
         {link.icon}
         {link.label}
@@ -180,6 +181,8 @@ const LandingPage = () => {
           <CarCard key={car.id} car={car} />
         ))}
       </div>
+
+      <BrandsCard />
     </div>
   )
 }
