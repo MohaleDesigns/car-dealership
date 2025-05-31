@@ -1,12 +1,7 @@
-import { Menu } from '@mantine/core'
-import ApartmentIcon from '@mui/icons-material/Apartment'
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
-import InventoryIcon from '@mui/icons-material/Inventory'
-import LiveHelpIcon from '@mui/icons-material/LiveHelp'
-import TimeToLeaveIcon from '@mui/icons-material/TimeToLeave'
-
 import BrandsCard from 'src/components/BrandsCard/BrandsCard'
 import CarCard from 'src/components/CarCard/CarCard'
+import HeaderCard from 'src/components/HeaderCard/HeaderCard'
+import LoanCalculator from 'src/components/LoanCalculator/LoanCalculator'
 
 const LandingPage = () => {
   // Dummy data
@@ -57,97 +52,6 @@ const LandingPage = () => {
     },
   ]
 
-  const menuLinks = [
-    {
-      icon: <TimeToLeaveIcon fontSize="small" />,
-      label: 'Sell A Car',
-      // link: routes.refunds(),
-    },
-    {
-      icon: <TimeToLeaveIcon fontSize="small" />,
-      label: 'Buy A Car',
-      // link: routes.refunds(),
-    },
-    {
-      icon: <InventoryIcon fontSize="small" />,
-      label: 'Services',
-      // link: routes.refunds(),
-      link: '',
-      links: [
-        {
-          label: 'Insurance',
-          // link: routes.viewEvents(),
-          extraFunctions: () => {},
-        },
-        {
-          label: 'Maintenance',
-          // link: routes.viewEvents(),
-          extraFunctions: () => {},
-        },
-      ],
-    },
-    {
-      icon: <LiveHelpIcon fontSize="small" />,
-      label: 'FAQs',
-      // link: routes.refunds(),
-    },
-    {
-      icon: <ApartmentIcon fontSize="small" />,
-      label: 'Contact Us',
-      // link: routes.refunds(),
-    },
-  ]
-
-  const items = menuLinks.map((link) => {
-    const menuItems = link.links?.map((item, index) => (
-      <Menu.Item
-        key={index}
-        // onClick={() => {
-        //   item.extraFunctions()
-        //   customNavigate(item.link)
-        // }}
-      >
-        {item.label}
-      </Menu.Item>
-    ))
-
-    if (menuItems) {
-      return (
-        <Menu
-          key={link.label}
-          trigger="hover"
-          transitionProps={{ exitDuration: 0 }}
-          withinPortal
-        >
-          <Menu.Target>
-            <a
-              href={link.link}
-              className={`custom-transition hover:bg-darkGreen/20 flex items-center justify-between rounded-lg border border-white px-2.5 py-2 text-start text-sm text-white decoration-transparent hover:cursor-pointer focus:bg-slate-200  focus:text-slate-600 xl:text-base`}
-            >
-              {link.icon}
-              <div className="flex items-center">
-                {link.label}
-                <ExpandMoreIcon />
-              </div>
-            </a>
-          </Menu.Target>
-          <Menu.Dropdown>{menuItems}</Menu.Dropdown>
-        </Menu>
-      )
-    }
-
-    return (
-      <a
-        key={link.label}
-        href={link.link}
-        className="custom-transition hover:bg-darkGreen/20 flex items-center justify-between gap-2 rounded-lg border border-white px-3 py-2 text-sm text-white decoration-transparent hover:cursor-pointer focus:bg-slate-200 focus:text-slate-600 xl:text-base"
-      >
-        {link.icon}
-        {link.label}
-      </a>
-    )
-  })
-
   return (
     <div className="container mx-auto">
       <div className="grid grid-cols-1 gap-2 md:grid-cols-3 lg:grid-cols-4">
@@ -163,6 +67,21 @@ const LandingPage = () => {
             image={car.image}
           />
         ))}
+      </div>
+
+      {/* Loan Calculator Divider  */}
+      <div className="background-1 my-10 p-5 sm:rounded-lg">
+        <div className="md:grid md:grid-cols-2 md:gap-5">
+          <div>
+            <HeaderCard
+              title="Want to Calculate Your Car Payment?"
+              titleColor="#fff"
+              subTitle="Match with up to 4 lenders to get the lowest rate available with no markups, no fees, and no obligations."
+              subTitleColor="#fff"
+            />
+          </div>
+          <LoanCalculator />
+        </div>
       </div>
 
       <BrandsCard />

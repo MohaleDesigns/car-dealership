@@ -40,3 +40,10 @@
   justify-content: space-center;
 }
 
+/* Background Images  */
+.background-1 {
+  background-image: url('/assets/images/backgrounds/background-1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
