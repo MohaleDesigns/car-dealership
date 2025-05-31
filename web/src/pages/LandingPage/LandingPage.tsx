@@ -1,5 +1,6 @@
 import BrandsCard from 'src/components/BrandsCard/BrandsCard'
 import CarCard from 'src/components/CarCard/CarCard'
+import DownloadAppBanner from 'src/components/DownloadAppBanner/DownloadAppBanner'
 import HeaderCard from 'src/components/HeaderCard/HeaderCard'
 import LoanCalculator from 'src/components/LoanCalculator/LoanCalculator'
 
@@ -53,8 +54,8 @@ const LandingPage = () => {
   ]
 
   return (
-    <div className="container mx-auto">
-      <div className="grid grid-cols-1 gap-2 md:grid-cols-3 lg:grid-cols-4">
+    <div>
+      <div className="container mx-auto grid grid-cols-1 gap-2 md:grid-cols-3 lg:grid-cols-4">
         {cars.map((car) => (
           <CarCard
             key={car.id}
@@ -70,7 +71,7 @@ const LandingPage = () => {
       </div>
 
       {/* Loan Calculator Divider  */}
-      <div className="background-1 my-10 p-5 sm:rounded-lg">
+      <div className="background-1 container mx-auto my-10 p-5 sm:rounded-lg">
         <div className="md:grid md:grid-cols-2 md:gap-5">
           <div>
             <HeaderCard
@@ -85,6 +86,7 @@ const LandingPage = () => {
       </div>
 
       <BrandsCard />
+      <DownloadAppBanner />
     </div>
   )
 }

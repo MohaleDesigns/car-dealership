@@ -59,7 +59,7 @@ const BrandsCard = () => {
   ]
 
   return (
-    <div className="p-5">
+    <div className="container mx-auto p-5">
       <HeaderCard
         title="Premium Brands"
         subTitle="Unveil the Finest Selection of High-End Vehicles"
