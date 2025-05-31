@@ -1,40 +1,14 @@
-// import { Link, routes } from '@redwoodjs/router'
-import { Carousel } from '@mantine/carousel'
-import {
-  Menu,
-  Button,
-  Flex,
-  Drawer,
-  Image,
-  Card,
-  Text,
-  Badge,
-  Title,
-  TextInput,
-} from '@mantine/core'
-import { useDisclosure } from '@mantine/hooks'
-import AccessTimeIcon from '@mui/icons-material/AccessTime'
+import { Menu } from '@mantine/core'
 import ApartmentIcon from '@mui/icons-material/Apartment'
-import CloseIcon from '@mui/icons-material/Close'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
-import FacebookIcon from '@mui/icons-material/Facebook'
-import InstagramIcon from '@mui/icons-material/Instagram'
 import InventoryIcon from '@mui/icons-material/Inventory'
 import LiveHelpIcon from '@mui/icons-material/LiveHelp'
-import LocalGasStationOutlinedIcon from '@mui/icons-material/LocalGasStationOutlined'
-import MenuIcon from '@mui/icons-material/Menu'
 import TimeToLeaveIcon from '@mui/icons-material/TimeToLeave'
-import XIcon from '@mui/icons-material/X'
-
-import { navigate, routes } from '@redwoodjs/router'
 
 import BrandsCard from 'src/components/BrandsCard/BrandsCard'
 import CarCard from 'src/components/CarCard/CarCard'
-import { customNavigate } from 'src/utils/prelineHandler'
 
 const LandingPage = () => {
-  const [opened, { open, close }] = useDisclosure(false)
-
   // Dummy data
   const cars = [
     {
@@ -176,9 +150,18 @@ const LandingPage = () => {
 
   return (
     <div className="container mx-auto">
-      <div className="grid grid-cols-1 gap-5 md:grid-cols-3 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-2 md:grid-cols-3 lg:grid-cols-4">
         {cars.map((car) => (
-          <CarCard key={car.id} car={car} />
+          <CarCard
+            key={car.id}
+            name={car.name}
+            price={car.price}
+            finance={car.finance}
+            mileage={car.mileage}
+            gearbox={car.gearbox}
+            fuel={car.fuel}
+            image={car.image}
+          />
         ))}
       </div>
 

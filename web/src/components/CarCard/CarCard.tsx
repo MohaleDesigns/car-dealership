@@ -1,89 +1,60 @@
-import {
-  Menu,
-  Button,
-  Flex,
-  Drawer,
-  Image,
-  Card,
-  Text,
-  Badge,
-  Title,
-  TextInput,
-} from '@mantine/core'
+import { Flex, Image, Card, Text } from '@mantine/core'
 import AccessTimeIcon from '@mui/icons-material/AccessTime'
-import ApartmentIcon from '@mui/icons-material/Apartment'
-import CloseIcon from '@mui/icons-material/Close'
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
-import FacebookIcon from '@mui/icons-material/Facebook'
-import InstagramIcon from '@mui/icons-material/Instagram'
-import InventoryIcon from '@mui/icons-material/Inventory'
-import LiveHelpIcon from '@mui/icons-material/LiveHelp'
 import LocalGasStationOutlinedIcon from '@mui/icons-material/LocalGasStationOutlined'
-import MenuIcon from '@mui/icons-material/Menu'
-import TimeToLeaveIcon from '@mui/icons-material/TimeToLeave'
-import XIcon from '@mui/icons-material/X'
+import SpeedIcon from '@mui/icons-material/Speed'
 
 interface Props {
-  car: any
+  name: string
+  price: string
+  finance: string
+  mileage: string
+  gearbox: string
+  fuel: string
+  image: string
 }
 
-const CarCard = ({ car }: Props) => {
+const CarCard = ({
+  name,
+  price,
+  finance,
+  mileage,
+  gearbox,
+  fuel,
+  image,
+}: Props) => {
   return (
     <Card shadow="sm" padding="lg" radius="md" withBorder className="max-w-sm">
       <Card.Section>
-        <Image src={car.image} height={200} alt={`${car.name}`} />
+        <Image src={image} height={200} alt={`${name}`} />
       </Card.Section>
 
-      <Text className="mt-2 flex items-end gap-1 text-4xl font-black text-primary">
-        {car.price}{' '}
+      <Text className="mt-2 flex items-end gap-1 text-2xl font-bold text-primary">
+        {price}{' '}
         <Text className="mb-1 text-xs font-normal text-primary">VAT</Text>
       </Text>
       <Text className="mt-2 text-xs font-normal text-primary">
         finance from{' '}
-        <Text className="text-xl font-bold text-primary">
-          {car.finance} p/m
-        </Text>
+        <Text className="text-lg font-bold text-primary">{finance} p/m</Text>
       </Text>
 
       <Text className="my-3 text-lg font-extrabold uppercase text-black">
-        {car.name}
+        {name}
       </Text>
 
-      <Flex className="flex-center-between mt-3 border-t border-secondary pt-3">
-        <Badge
-          color="blue"
-          variant="light"
-          leftSection={<AccessTimeIcon fontSize="small" />}
-        >
-          {car.mileage}
-        </Badge>
-        <Badge
-          color="blue"
-          variant="light"
-          leftSection={<LocalGasStationOutlinedIcon fontSize="small" />}
-        >
-          {car.fuel}
-        </Badge>
-        <Badge
-          color="blue"
-          variant="light"
-          leftSection={<AccessTimeIcon fontSize="small" />}
-        >
-          {car.gearbox}
-        </Badge>
+      <Flex className="flex-center-between mt-3 border-t border-t-primary/20 pt-4">
+        <div className="flex items-center">
+          <SpeedIcon fontSize="small" />
+          <span className="ml-1 text-[11px]">{mileage}</span>
+        </div>
+        <div className="flex items-center">
+          <LocalGasStationOutlinedIcon fontSize="small" />
+          <span className="ml-1 text-[11px]">{fuel}</span>
+        </div>
+        <div className="flex items-center">
+          <AccessTimeIcon fontSize="small" />
+          <span className="ml-1 text-[11px]">{gearbox}</span>
+        </div>
       </Flex>
-
-      {/* <Button
-            variant="light"
-            color="blue"
-            fullWidth
-            mt="md"
-            radius="md"
-            // onClick={() => routes.CarDetailsPage()}
-            onClick={() => customNavigate(routes.CarDetailsPage())}
-          >
-            View Details
-          </Button> */}
     </Card>
   )
 }
