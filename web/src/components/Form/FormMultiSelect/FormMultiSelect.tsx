@@ -1,22 +1,26 @@
-import { Text, TextInput, TextInputProps, rem } from '@mantine/core'
-interface Props extends TextInputProps {
-  value?: string
-  placeHolder?: string
+import { MultiSelect, rem, Text } from '@mantine/core'
+
+interface Props {
   setValue?: any
-  type?: string
+  value?: any
+  data: any
+  placeholder: string
   label?: string
   required?: boolean
+  disabled?: boolean
   validationCondition?: boolean
   validationMessage?: string
   inputTip?: string
 }
-const FormTextInput = ({
-  value,
+
+const FormMultiSelect = ({
   setValue,
-  placeHolder,
-  type,
+  value,
+  data,
+  placeholder,
   label,
   required,
+  disabled,
   validationCondition,
   validationMessage,
   inputTip,
@@ -24,32 +28,37 @@ const FormTextInput = ({
 }: Props) => {
   return (
     <div className="w-full">
-      {label != '' && label ? (
+      {label != '' && (
         <label className="text-sm">
-          {label} {required && <span className="text-red">*</span>}
+          {label} {required && <text className="text-red">*</text>}
           {inputTip && (
             <span className="text-xs font-semibold text-gray-400">
               {inputTip}
             </span>
           )}
         </label>
-      ) : (
-        required && <span className={`text-sm text-red`}>Required *</span>
       )}
-      <div className="mt-1 flex w-full flex-col">
-        <TextInput
-          className={
-            'w-full text-primary outline-none placeholder:text-gray-400 focus:ring-transparent'
-          }
-          type={type ? type : 'text'}
+      <div className="mt-1 w-full">
+        <MultiSelect
           value={value}
+          placeholder={placeholder}
+          data={data ? data : [{ label: 'error', value: 'error' }]}
+          onChange={(selected) => setValue(selected)}
+          searchable
+          disabled={disabled}
           radius="md"
-          onChange={(e) => setValue(e.target.value)}
-          placeholder={placeHolder}
-          onScroll={undefined}
           styles={{
             input: {
+              outline: 'none',
               height: rem(45),
+            },
+            wrapper: {
+              border: 'none',
+              outline: 'none',
+            },
+            root: {
+              border: 'none',
+              outline: 'none',
             },
           }}
           {...rest}
@@ -62,4 +71,4 @@ const FormTextInput = ({
   )
 }
 
-export default FormTextInput
+export default FormMultiSelect

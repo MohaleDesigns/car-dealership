@@ -14,32 +14,32 @@ const BrandsCard = () => {
     {
       icon: Icon1,
       name: 'Mazda',
-      numberOfCars: 200,
+      numberOfCars: 400,
     },
     {
       icon: Icon2,
       name: 'Mazda',
-      numberOfCars: 200,
+      numberOfCars: 400,
     },
     {
       icon: Icon3,
       name: 'Mazda',
-      numberOfCars: 200,
+      numberOfCars: 900,
     },
     {
       icon: Icon4,
       name: 'Mazda',
-      numberOfCars: 200,
+      numberOfCars: 1700,
     },
     {
       icon: Icon5,
       name: 'Mazda',
-      numberOfCars: 200,
+      numberOfCars: 138,
     },
     {
       icon: Icon6,
       name: 'Mazda',
-      numberOfCars: 200,
+      numberOfCars: 280,
     },
     // {
     //   icon: Icon7,
@@ -59,25 +59,27 @@ const BrandsCard = () => {
   ]
 
   return (
-    <div className="container mx-auto p-5">
-      <HeaderCard
-        title="Premium Brands"
-        subTitle="Unveil the Finest Selection of High-End Vehicles"
-      />
+    <div className="mb-20 border-b border-primary/20 p-5 pb-20">
+      <div className="container mx-auto">
+        <HeaderCard
+          title="Premium Brands"
+          subTitle="Unveil the Finest Selection of High-End Vehicles"
+        />
 
-      <div className="grid grid-cols-6 gap-4 ">
-        {brands.map((b, i) => (
-          <div
-            key={i}
-            className="flex flex-col items-center justify-center rounded-lg border border-primary/20 p-5"
-          >
-            <img alt={`${b.name}`} src={b.icon} />
-            <h4 className="mb-1 mt-2 text-sm font-bold">{b.name}</h4>
-            <p className="text-sm font-medium text-primary/80">
-              {b.numberOfCars}
-            </p>
-          </div>
-        ))}
+        <div className="grid grid-cols-6 gap-4 ">
+          {brands.map((b, i) => (
+            <div
+              key={i}
+              className="flex flex-col items-center justify-center rounded-lg border border-primary/20 p-5"
+            >
+              <img alt={`${b.name}`} src={b.icon} />
+              <h4 className="mb-1 mt-2 text-sm font-bold">{b.name}</h4>
+              <p className="text-xs font-medium text-primary/80">
+                {b.numberOfCars} cars
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   )

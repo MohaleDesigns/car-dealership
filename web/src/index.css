@@ -41,6 +41,12 @@
 }
 
 /* Background Images  */
+.banner-background {
+  background-image: url('/assets/images/backgrounds/banner.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 .background-1 {
   background-image: url('/assets/images/backgrounds/background-1.png');
   background-size: cover;

@@ -1,4 +1,4 @@
-import { Select, rem } from '@mantine/core'
+import { Select, rem, Text } from '@mantine/core'
 
 interface Props {
   setValue?: any
@@ -8,6 +8,9 @@ interface Props {
   label?: string
   required?: boolean
   disabled?: boolean
+  validationCondition?: boolean
+  validationMessage?: string
+  inputTip?: string
 }
 const FormDropDown = ({
   setValue,
@@ -17,13 +20,21 @@ const FormDropDown = ({
   label,
   required,
   disabled,
+  validationCondition,
+  validationMessage,
+  inputTip,
   ...rest
 }: Props) => {
   return (
     <div className="w-full">
       {label != '' && (
         <label className="text-sm">
-          {label} {required ? <text className="text-red">*</text> : ''}
+          {label} {required && <span className="text-red">*</span>}
+          {inputTip && (
+            <span className="text-xs font-semibold text-gray-400">
+              {inputTip}
+            </span>
+          )}
         </label>
       )}
       <div className="mt-1 w-full">
@@ -52,6 +63,9 @@ const FormDropDown = ({
           }}
           {...rest}
         />
+        {validationCondition == true && (
+          <Text className="text-sm text-red">{validationMessage}</Text>
+        )}
       </div>
     </div>
   )
