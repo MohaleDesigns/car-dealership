@@ -4,6 +4,7 @@ import CarCard from 'src/components/CarCard/CarCard'
 import DownloadAppBanner from 'src/components/DownloadAppBanner/DownloadAppBanner'
 import HeaderCard from 'src/components/HeaderCard/HeaderCard'
 import LoanCalculator from 'src/components/LoanCalculator/LoanCalculator'
+import TestimonialCard from 'src/components/TestimonialCard/TestimonialCard'
 
 const LandingPage = () => {
   // Dummy data
@@ -54,6 +55,64 @@ const LandingPage = () => {
     },
   ]
 
+  const testimonials = [
+    {
+      id: 1,
+      name: 'John Doe',
+      role: 'Verified Buyer',
+      title: 'Easy to Understand',
+      description:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quaerat officiis aperiam quasi dolorum commodi reprehenderit sit aut. Enim, reiciendis.',
+      ratings: 4,
+      profile:
+        'https://images.pexels.com/photos/20000981/pexels-photo-20000981/free-photo-of-portrait-of-an-african-man.jpeg',
+    },
+    {
+      id: 2,
+      name: 'Jane Smith',
+      role: 'Verified Buyer',
+      title: 'Highly Recommend',
+      description:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quaerat officiis aperiam quasi dolorum commodi reprehenderit sit aut. Enim, reiciendis.',
+      ratings: 4.5,
+      profile:
+        'https://images.pexels.com/photos/20000981/pexels-photo-20000981/free-photo-of-portrait-of-an-african-man.jpeg',
+    },
+    {
+      id: 3,
+      name: '2023 Audi A3',
+      role: 'Verified Buyer',
+      title: 'Highly Recommend',
+      description:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quaerat officiis aperiam quasi dolorum commodi reprehenderit sit aut. Enim, reiciendis.',
+      ratings: 4,
+      profile:
+        'https://images.pexels.com/photos/20000981/pexels-photo-20000981/free-photo-of-portrait-of-an-african-man.jpeg',
+    },
+    {
+      id: 4,
+      name: '2023 Audi A3',
+      role: 'Verified Buyer',
+      title: 'Highly Recommend',
+      description:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quaerat officiis aperiam quasi dolorum commodi reprehenderit sit aut. Enim, reiciendis.',
+      ratings: 5,
+      profile:
+        'https://images.pexels.com/photos/20000981/pexels-photo-20000981/free-photo-of-portrait-of-an-african-man.jpeg',
+    },
+    {
+      id: 5,
+      name: '2023 Audi A3',
+      role: 'Verified Buyer',
+      title: 'Highly Recommend',
+      description:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quaerat officiis aperiam quasi dolorum commodi reprehenderit sit aut. Enim, reiciendis.',
+      ratings: 3.5,
+      profile:
+        'https://images.pexels.com/photos/20000981/pexels-photo-20000981/free-photo-of-portrait-of-an-african-man.jpeg',
+    },
+  ]
+
   return (
     <div>
       <Banner />
@@ -74,17 +133,45 @@ const LandingPage = () => {
       </div> */}
 
       {/* Loan Calculator Divider  */}
-      <div className="background-1 container mx-auto mb-20 p-5 sm:rounded-lg">
-        <div className="md:grid md:grid-cols-2 md:gap-5">
-          <div>
-            <HeaderCard
-              title="Want to Calculate Your Car Payment?"
-              titleColor="#fff"
-              subTitle="Match with up to 4 lenders to get the lowest rate available with no markups, no fees, and no obligations."
-              subTitleColor="#fff"
-            />
-          </div>
+      <div className="background-3 relative mb-20 sm:rounded-lg">
+        {/* Background Overlay */}
+        <div className="absolute z-10 h-full w-full bg-gradient-to-r from-[rgba(0,0,0,0.8)] to-[rgba(0,0,0,0.5)]"></div>
+
+        <div className="container relative z-20 mx-auto px-5 py-20 md:grid md:grid-cols-2 md:gap-5">
           <LoanCalculator />
+          <div className="p-5">
+            <h4 className="mb-3 max-w-sm text-xl font-bold text-white md:text-4xl">
+              Want to Calculate Your Car Payment?
+            </h4>
+            <p className="max-w-sm text-sm font-light text-white md:text-base">
+              Match with up to 4 lenders to get the lowest rate available with
+              no markups, no fees, and no obligations.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Testimonials Section */}
+      <div className="mb-20">
+        <div className="container mx-auto p-5">
+          <HeaderCard
+            title="What Our Customers Say"
+            subTitle="Hear from those who found their dream cars with us."
+          />
+        </div>
+
+        <div className="flex items-center gap-3">
+          {testimonials.map((testimonial) => (
+            <TestimonialCard
+              key={testimonial.id}
+              name={testimonial.name}
+              role={testimonial.role}
+              title={testimonial.title}
+              description={testimonial.description}
+              profile={testimonial.profile}
+              ratings={testimonial.ratings}
+            />
+          ))}
         </div>
       </div>
 

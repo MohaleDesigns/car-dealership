@@ -59,8 +59,8 @@ const BrandsCard = () => {
   ]
 
   return (
-    <div className="mb-20 border-b border-primary/20 p-5 pb-20">
-      <div className="container mx-auto">
+    <div className="mb-20 border-b border-primary/20 pb-20">
+      <div className="container mx-auto p-5">
         <HeaderCard
           title="Premium Brands"
           subTitle="Unveil the Finest Selection of High-End Vehicles"

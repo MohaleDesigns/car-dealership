@@ -18,6 +18,8 @@ module.exports = {
         secondary: '#11BEA7',
         blue: '#004ADE',
         red: '#DD1B22',
+        text: '#737373',
+        border: '#dde1de',
       },
       fontFamily: {
         Montserrat: ['Montserrat', 'sans-serif'],

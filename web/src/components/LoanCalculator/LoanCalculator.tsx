@@ -1,6 +1,5 @@
 import { Text } from '@mantine/core'
 
-import FormDropDown from '../Form/FormDropDown/FormDropDown'
 import FormInputOptions from '../Form/FormInputOptions/FormInputOptions'
 import FormTextInput from '../Form/FormTextInput/FormTextInput'
 import PrimaryButton from '../PrimaryButton/PrimaryButton'
@@ -8,18 +7,8 @@ import PrimaryButton from '../PrimaryButton/PrimaryButton'
 const LoanCalculator = () => {
   return (
     <div className="rounded-lg bg-white p-5">
-      {/* Title & Sub-Title  */}
-      <div>
-        <h4 className="mb-1 text-xl font-bold md:text-2xl">
-          Car Loan Calculator
-        </h4>
-        <p className="text-xs md:text-sm">
-          Estimate your monthly auto loan payments with this calculator.
-        </p>
-      </div>
-
       {/* Details  */}
-      <div className="my-8 rounded-lg bg-primary p-5">
+      <div className="mb-5 rounded-lg bg-primary p-5">
         <div className="flex flex-col items-center justify-center">
           <Text className="mt-2 flex items-end gap-1 text-2xl font-bold text-white">
             R4,226

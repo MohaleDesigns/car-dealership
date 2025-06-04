@@ -1,12 +1,11 @@
 import { useState } from 'react'
 
-import { Tabs, Button, Badge } from '@mantine/core'
+import { Button, Badge } from '@mantine/core'
 import ContactSupportIcon from '@mui/icons-material/ContactSupport'
 import SearchIcon from '@mui/icons-material/Search'
 
 import FormDropDown from '../Form/FormDropDown/FormDropDown'
 import FormMultiSelect from '../Form/FormMultiSelect/FormMultiSelect'
-import FormTextInput from '../Form/FormTextInput/FormTextInput'
 import PrimaryButton from '../PrimaryButton/PrimaryButton'
 
 const Banner = () => {
