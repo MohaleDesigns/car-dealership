@@ -4,6 +4,7 @@ import CarCard from 'src/components/CarCard/CarCard'
 import DownloadAppBanner from 'src/components/DownloadAppBanner/DownloadAppBanner'
 import HeaderCard from 'src/components/HeaderCard/HeaderCard'
 import LoanCalculator from 'src/components/LoanCalculator/LoanCalculator'
+import ServiceCard from 'src/components/ServiceCard/ServiceCard'
 import TestimonialCard from 'src/components/TestimonialCard/TestimonialCard'
 
 const LandingPage = () => {
@@ -131,6 +132,22 @@ const LandingPage = () => {
           />
         ))}
       </div> */}
+
+      {/* Services */}
+      <div className="container mx-auto grid grid-cols-1 gap-5 px-5 pb-20 md:grid-cols-2 ">
+        <ServiceCard
+          title="Looking for a car to buy?"
+          description="Discover your ideal car with us for every adventure, whether it's a road trip or business travel."
+          buttonText="Explore Now"
+          onButtonClick={() => console.log('Explore Now clicked')}
+        />
+        <ServiceCard
+          title="Need help with financing?"
+          description="Get the best financing options for your dream car with our expert assistance, contact us today!"
+          buttonText="Get Started"
+          onButtonClick={() => console.log('Get Started clicked')}
+        />
+      </div>
 
       {/* Loan Calculator Divider  */}
       <div className="background-3 relative mb-20 sm:rounded-lg">
