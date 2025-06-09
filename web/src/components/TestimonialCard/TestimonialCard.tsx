@@ -26,11 +26,11 @@ const TestimonialCard = ({
   console.log('TestimonialCard rendered with ratings:', ratings)
 
   return (
-    <div className="border-border rounded-lg border p-5 shadow-xl shadow-black/5">
-      <h2 className="mb-1 font-medium">{title}</h2>
-      <p className="text-text text-xs">{description}</p>
+    <div className="w-96 rounded-lg border border-border p-5 shadow-xl shadow-black/5">
+      <h2 className="mb-3 text-sm font-medium md:text-base">{title}</h2>
+      <p className="text-[10px] text-text md:text-xs">{description}</p>
 
-      <div className="border-border mt-5 flex items-center justify-between gap-3 border-t pt-4">
+      <div className="mt-5 flex items-center justify-between gap-3 border-t border-border pt-4">
         <div className="flex items-center gap-3">
           <img
             src={profile}
@@ -38,13 +38,13 @@ const TestimonialCard = ({
             className="h-10 w-10 rounded-full object-cover"
           />
           <div>
-            <h4 className="mb-1 text-sm font-semibold">{name}</h4>
-            <p className="text-text/70 text-xs">{role}</p>
+            <h4 className="mb-1 text-xs font-medium md:text-sm">{name}</h4>
+            <p className="text-[10px] text-text/70 md:text-xs">{role}</p>
           </div>
         </div>
 
         <div className="flex flex-col justify-end gap-1">
-          <span className="text-text text-end text-xs">
+          <span className="text-end text-xs text-text">
             ({Number.isFinite(ratings) ? ratings.toFixed(1) : '0.0'})
           </span>
 

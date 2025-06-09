@@ -19,12 +19,12 @@ const DownloadAppBanner = () => {
           <div className="flex items-center justify-center gap-3">
             <img
               src={GooglePlay}
-              className="hover:cursor-pointer sm:w-40 md:w-48"
+              className="w-36 hover:cursor-pointer sm:w-40 md:w-48"
               alt="google store"
             />
             <img
               src={AppStore}
-              className="hover:cursor-pointer sm:w-40 md:w-48"
+              className="w-36 hover:cursor-pointer sm:w-40 md:w-48"
               alt="app store"
             />
           </div>

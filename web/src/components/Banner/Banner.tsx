@@ -19,15 +19,12 @@ const Banner = () => {
       <div className="container relative z-20 mx-auto px-5 pb-10 pt-40">
         {/* Title & Subtitle */}
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-          <div className="col-span-2">
-            <Badge
-              color="#11BEA7"
-              radius="md"
-              variant="light"
-              className="mb-3 inline-block"
-            >
-              200, 000+ cars to pick from
-            </Badge>
+          <div className="col-span-1 sm:col-span-2">
+            <div className="mb-3 text-center md:text-left">
+              <Badge color="#11BEA7" radius="md" variant="light">
+                200, 000+ cars to pick from
+              </Badge>
+            </div>
             <h4 className="mb-3 text-center text-3xl font-bold text-white md:text-start md:text-5xl">
               Find your next vehicle today!
             </h4>
@@ -49,6 +46,7 @@ const Banner = () => {
                 size="xs"
                 color="#11BEA7"
                 onClick={() => setCarType('all')}
+                className="Border border-secondary"
               >
                 All Cars
               </Button>
@@ -57,6 +55,7 @@ const Banner = () => {
                 size="xs"
                 color="#11BEA7"
                 onClick={() => setCarType('new')}
+                className="Border border-secondary"
               >
                 New Cars
               </Button>
@@ -65,6 +64,7 @@ const Banner = () => {
                 size="xs"
                 color="#11BEA7"
                 onClick={() => setCarType('used')}
+                className="Border border-secondary"
               >
                 Used Cars
               </Button>
@@ -77,7 +77,7 @@ const Banner = () => {
                   className="text-[#303318]"
                 />
               }
-              className="font-normal"
+              className="hidden font-normal sm:inline-block"
               color="#303318"
               variant="transparent"
             >
@@ -169,7 +169,9 @@ const Banner = () => {
               <PrimaryButton
                 title="Search"
                 fontSize="14px"
-                icon={<SearchIcon fontSize="small" className="text-white" />}
+                leftIcon={
+                  <SearchIcon fontSize="small" className="text-white" />
+                }
               />
             </div>
           </div>

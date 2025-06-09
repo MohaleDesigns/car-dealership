@@ -13,72 +13,84 @@ const BrandsCard = () => {
   const brands = [
     {
       icon: Icon1,
-      name: 'Mazda',
+      name: 'Opel',
       numberOfCars: 400,
     },
     {
       icon: Icon2,
-      name: 'Mazda',
+      name: 'BMW',
       numberOfCars: 400,
     },
     {
       icon: Icon3,
-      name: 'Mazda',
+      name: 'Mercedes',
       numberOfCars: 900,
     },
     {
       icon: Icon4,
-      name: 'Mazda',
+      name: 'Ford',
       numberOfCars: 1700,
     },
     {
       icon: Icon5,
-      name: 'Mazda',
+      name: 'Peugeot',
       numberOfCars: 138,
     },
     {
       icon: Icon6,
-      name: 'Mazda',
+      name: 'Hyundai',
       numberOfCars: 280,
     },
-    // {
-    //   icon: Icon7,
-    //   name: 'Mazda',
-    //   numberOfCars: 200,
-    // },
-    // {
-    //   icon: Icon8,
-    //   name: 'Mazda',
-    //   numberOfCars: 200,
-    // },
-    // {
-    //   icon: Icon9,
-    //   name: 'Mazda',
-    //   numberOfCars: 200,
-    // },
+    {
+      icon: Icon7,
+      name: 'Toyota',
+      numberOfCars: 200,
+    },
+    {
+      icon: Icon8,
+      name: 'Nissan',
+      numberOfCars: 200,
+    },
+    {
+      icon: Icon9,
+      name: 'Mazda',
+      numberOfCars: 200,
+    },
   ]
 
+  const slideBrandsDuplicate = [...brands, ...brands]
+
   return (
-    <div className="mb-20 border-b border-primary/20 pb-20">
+    <div className="mb-20 border-b border-primary/20 pb-10">
       <div className="container mx-auto p-5">
         <HeaderCard
           title="Premium Brands"
           subTitle="Unveil the Finest Selection of High-End Vehicles"
         />
 
-        <div className="grid grid-cols-6 gap-4 ">
-          {brands.map((b, i) => (
-            <div
-              key={i}
-              className="flex flex-col items-center justify-center rounded-lg border border-primary/20 p-5"
-            >
-              <img alt={`${b.name}`} src={b.icon} />
-              <h4 className="mb-1 mt-2 text-sm font-bold">{b.name}</h4>
-              <p className="text-xs font-medium text-primary/80">
-                {b.numberOfCars} cars
-              </p>
-            </div>
-          ))}
+        <div className="relative w-full overflow-hidden pb-5">
+          <div className="slider-wrapper flex w-max animate-[slide_20s_linear_infinite] items-center gap-5">
+            {slideBrandsDuplicate.map((brand, index) => (
+              <div
+                key={index}
+                className="flex w-40 flex-col items-center justify-center rounded-lg border border-primary/20 p-5"
+              >
+                <div className="mb-2 flex h-8 w-8 items-center justify-center">
+                  <img
+                    alt={`${brand.name}`}
+                    src={brand.icon}
+                    className="w-full"
+                  />
+                </div>
+                <h4 className="mb-1 mt-2 text-sm font-semibold">
+                  {brand.name}
+                </h4>
+                <p className="text-center text-[10px] font-medium text-primary/80">
+                  {brand.numberOfCars} cars
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

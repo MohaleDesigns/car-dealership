@@ -28,17 +28,15 @@ const CarCard = ({
         <Image src={image} height={200} alt={`${name}`} />
       </Card.Section>
 
-      <Text className="mt-2 flex items-end gap-1 text-2xl font-bold text-primary">
+      <Text className="my-3 text-lg font-bold text-black">{name}</Text>
+
+      <Text className="flex items-end gap-1 text-2xl font-bold text-primary">
         {price}{' '}
         <Text className="mb-1 text-xs font-normal text-primary">VAT</Text>
       </Text>
-      <Text className="mt-2 text-xs font-normal text-primary">
+      <Text className="mt-1 text-xs font-normal text-primary">
         finance from{' '}
         <Text className="text-lg font-bold text-primary">{finance} p/m</Text>
-      </Text>
-
-      <Text className="my-3 text-lg font-extrabold uppercase text-black">
-        {name}
       </Text>
 
       <Flex className="flex-center-between mt-3 border-t border-t-primary/20 pt-4">

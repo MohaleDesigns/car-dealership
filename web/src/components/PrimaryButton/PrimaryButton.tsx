@@ -1,24 +1,29 @@
 interface PrimaryButtonProps {
   title: string
   fontSize?: string
-  icon?: React.ReactNode
+  leftIcon?: React.ReactNode
+  rightIcon?: React.ReactNode
+  isWidthFull?: boolean
   onClick?: () => void
 }
 
 const PrimaryButton = ({
   title,
   fontSize,
-  icon,
+  leftIcon,
+  rightIcon,
+  isWidthFull,
   onClick,
 }: PrimaryButtonProps) => {
   return (
     <button
-      className="custom-transition flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-10 py-3 text-base capitalize text-white"
+      className={`custom-transition flex ${isWidthFull && 'w-full'} items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 text-xs font-normal capitalize text-white sm:text-sm`}
       style={{ fontSize: fontSize }}
       onClick={onClick}
     >
-      {icon}
+      {leftIcon}
       {title}
+      {rightIcon}
     </button>
   )
 }

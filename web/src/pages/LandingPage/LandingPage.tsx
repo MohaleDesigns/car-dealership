@@ -1,9 +1,12 @@
+import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded'
+
 import Banner from 'src/components/Banner/Banner'
 import BrandsCard from 'src/components/BrandsCard/BrandsCard'
 import CarCard from 'src/components/CarCard/CarCard'
 import DownloadAppBanner from 'src/components/DownloadAppBanner/DownloadAppBanner'
 import HeaderCard from 'src/components/HeaderCard/HeaderCard'
 import LoanCalculator from 'src/components/LoanCalculator/LoanCalculator'
+import PrimaryButton from 'src/components/PrimaryButton/PrimaryButton'
 import ServiceCard from 'src/components/ServiceCard/ServiceCard'
 import TestimonialCard from 'src/components/TestimonialCard/TestimonialCard'
 
@@ -114,37 +117,60 @@ const LandingPage = () => {
     },
   ]
 
+  const slideTestimonialsDuplicate = [...testimonials, ...testimonials]
+
   return (
     <div>
       <Banner />
       <BrandsCard />
-      {/* <div className="container mx-auto grid grid-cols-1 gap-2 md:grid-cols-3 lg:grid-cols-4">
-        {cars.map((car) => (
-          <CarCard
-            key={car.id}
-            name={car.name}
-            price={car.price}
-            finance={car.finance}
-            mileage={car.mileage}
-            gearbox={car.gearbox}
-            fuel={car.fuel}
-            image={car.image}
+
+      <div className="container mx-auto p-5">
+        <div className="flex items-center justify-between">
+          <HeaderCard
+            title="Featured Listings"
+            subTitle="Find the perfect ride for any occasion."
           />
-        ))}
-      </div> */}
+
+          <PrimaryButton
+            title="View More"
+            rightIcon={
+              <ArrowForwardRoundedIcon
+                fontSize="small"
+                className="text-white"
+              />
+            }
+          />
+        </div>
+        <div className="grid grid-cols-1 gap-2 pb-20 md:grid-cols-3 lg:grid-cols-4">
+          {cars.map((car) => (
+            <CarCard
+              key={car.id}
+              name={car.name}
+              price={car.price}
+              finance={car.finance}
+              mileage={car.mileage}
+              gearbox={car.gearbox}
+              fuel={car.fuel}
+              image={car.image}
+            />
+          ))}
+        </div>
+      </div>
 
       {/* Services */}
-      <div className="container mx-auto grid grid-cols-1 gap-5 px-5 pb-20 md:grid-cols-2 ">
+      <div className="container mx-auto grid grid-cols-1 gap-5 px-5 pb-20 lg:grid-cols-2 ">
         <ServiceCard
           title="Looking for a car to buy?"
           description="Discover your ideal car with us for every adventure, whether it's a road trip or business travel."
           buttonText="Explore Now"
+          background="background-4"
           onButtonClick={() => console.log('Explore Now clicked')}
         />
         <ServiceCard
           title="Need help with financing?"
           description="Get the best financing options for your dream car with our expert assistance, contact us today!"
           buttonText="Get Started"
+          background="background-5"
           onButtonClick={() => console.log('Get Started clicked')}
         />
       </div>
@@ -154,13 +180,13 @@ const LandingPage = () => {
         {/* Background Overlay */}
         <div className="absolute z-10 h-full w-full bg-gradient-to-r from-[rgba(0,0,0,0.8)] to-[rgba(0,0,0,0.5)]"></div>
 
-        <div className="container relative z-20 mx-auto px-5 py-20 md:grid md:grid-cols-2 md:gap-5">
+        <div className="container relative z-20 mx-auto flex flex-col-reverse px-5 py-20 md:grid md:grid-cols-2 md:gap-5">
           <LoanCalculator />
-          <div className="p-5">
-            <h4 className="mb-3 max-w-sm text-xl font-bold text-white md:text-4xl">
+          <div className="pb-5 md:p-5">
+            <h4 className="mb-3 text-3xl font-bold text-white md:max-w-sm md:text-4xl">
               Want to Calculate Your Car Payment?
             </h4>
-            <p className="max-w-sm text-sm font-light text-white md:text-base">
+            <p className="text-sm font-light text-white md:max-w-sm md:text-base">
               Match with up to 4 lenders to get the lowest rate available with
               no markups, no fees, and no obligations.
             </p>
@@ -177,18 +203,20 @@ const LandingPage = () => {
           />
         </div>
 
-        <div className="flex items-center gap-3">
-          {testimonials.map((testimonial) => (
-            <TestimonialCard
-              key={testimonial.id}
-              name={testimonial.name}
-              role={testimonial.role}
-              title={testimonial.title}
-              description={testimonial.description}
-              profile={testimonial.profile}
-              ratings={testimonial.ratings}
-            />
-          ))}
+        <div className="relative w-full overflow-hidden pb-5">
+          <div className="slider-wrapper flex w-max animate-[slide_20s_linear_infinite] items-center gap-5">
+            {slideTestimonialsDuplicate.map((testimonial) => (
+              <TestimonialCard
+                key={testimonial.id}
+                name={testimonial.name}
+                role={testimonial.role}
+                title={testimonial.title}
+                description={testimonial.description}
+                profile={testimonial.profile}
+                ratings={testimonial.ratings}
+              />
+            ))}
+          </div>
         </div>
       </div>
 

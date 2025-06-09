@@ -42,7 +42,7 @@ const LoanCalculator = () => {
       </div>
 
       {/* Button  */}
-      <PrimaryButton title="Get quick finance" />
+      <PrimaryButton title="Get quick finance" isWidthFull />
     </div>
   )
 }

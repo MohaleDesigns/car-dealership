@@ -41,6 +41,20 @@
   justify-content: space-center;
 }
 
+/* Slider animation */
+.slider-wrapper:hover {
+  animation-play-state: paused;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 /* Background Images  */
 .image-background {
   background-size: cover;
