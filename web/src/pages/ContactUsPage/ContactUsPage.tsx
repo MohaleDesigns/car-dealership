@@ -1,11 +1,12 @@
 // import { Link, routes } from '@redwoodjs/router'
-import { Badge, Flex } from '@mantine/core'
+import { Flex } from '@mantine/core'
 
 import { Metadata } from '@redwoodjs/web'
 
 import FormTextInput from 'src/components/Form/FormTextInput/FormTextInput'
 import FormTextTextarea from 'src/components/Form/FormTextTextarea/FormTextTextarea'
 import PageBanner from 'src/components/PageBanner/PageBanner'
+import SecondaryButton from 'src/components/SecondaryButton/SecondaryButton'
 
 import BuyersIcon from '../../assets/images/illustrations/icon_buyers_guide.svg'
 import BuyingIcon from '../../assets/images/illustrations/icon_buying.svg'
@@ -16,7 +17,7 @@ const ContactUsPage = () => {
     <>
       <Metadata title="ContactUs" description="ContactUs page" />
 
-      {/* ==================== BANNER ==================== */}
+      {/* BANNER */}
       <PageBanner
         funFact="7+ years of experience"
         title="Contact Us"
@@ -24,7 +25,7 @@ const ContactUsPage = () => {
             got you, contact us."
       />
 
-      {/* ==================== FORM ==================== */}
+      {/* FORM */}
       <div className="container relative z-10 mx-auto flex w-full flex-col gap-3 rounded-lg bg-background p-5 px-5 py-10 sm:grid sm:gap-5 md:-mb-20 md:mt-10 md:flex md:w-[70%] md:flex-col md:gap-3 md:p-16 md:shadow-lg lg:grid lg:grid-cols-2 lg:gap-5">
         <FormTextInput
           label="Email"
@@ -47,9 +48,13 @@ const ContactUsPage = () => {
             required
           />
         </div>
+
+        <div className="col-span-2 mt-5">
+          <SecondaryButton title="Submit" size="md" isWidthFull />
+        </div>
       </div>
 
-      {/* ==================== DETAILS & AREAS ==================== */}
+      {/* DETAILS & AREAS */}
       <div className="bg-primary px-5 py-10 md:py-40">
         <div className="container mx-auto flex flex-col gap-3 sm:grid sm:grid-cols-2 sm:gap-5 md:grid md:grid-cols-3 md:gap-5">
           <div className="rounded-lg bg-background p-5">

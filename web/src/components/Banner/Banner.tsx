@@ -168,8 +168,8 @@ const Banner = () => {
               />
               <PrimaryButton
                 title="Search"
-                fontSize="14px"
-                leftIcon={
+                size="md"
+                leftSection={
                   <SearchIcon fontSize="small" className="text-white" />
                 }
               />

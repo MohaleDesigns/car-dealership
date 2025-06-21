@@ -13,6 +13,7 @@ import TimeToLeaveIcon from '@mui/icons-material/TimeToLeave'
 import { routes } from '@redwoodjs/router'
 
 import Logo from '../../assets/images/weeleegreen.png'
+import SecondaryButton from '../SecondaryButton/SecondaryButton'
 
 const Header = () => {
   const [opened, { open, close }] = useDisclosure(false)
@@ -113,9 +114,10 @@ const Header = () => {
           <button className="custom-transition px-5 py-2 text-sm text-primary hover:text-primary/80">
             <CallIcon fontSize="small" className="" /> 0800 800 888
           </button>
-          <button className="custom-transition rounded-lg border border-primary px-5 py-2 text-sm text-primary hover:bg-primary hover:text-white">
-            <LoginIcon fontSize="small" className="" /> Login
-          </button>
+          <SecondaryButton
+            title="Login"
+            leftSection={<LoginIcon fontSize="small" className="" />}
+          />
         </div>
 
         <div className="flex items-center justify-between gap-2 p-5">

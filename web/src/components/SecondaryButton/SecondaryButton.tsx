@@ -1,6 +1,6 @@
 import { Button } from '@mantine/core'
 
-interface PrimaryButtonProps {
+interface SecondaryButtonProps {
   title: string
   size?: string
   leftSection?: React.ReactNode
@@ -9,20 +9,20 @@ interface PrimaryButtonProps {
   onClick?: () => void
 }
 
-const PrimaryButton = ({
+const SecondaryButton = ({
   title,
   size,
   leftSection,
   rightSection,
   isWidthFull,
   onClick,
-}: PrimaryButtonProps) => {
+}: SecondaryButtonProps) => {
   return (
     <Button
-      className="border border-primary bg-primary text-white hover:bg-transparent hover:text-primary"
+      className="border border-primary text-primary hover:bg-primary hover:text-white"
       size={size}
       radius="md"
-      variant="fill"
+      variant="outline"
       fullWidth={isWidthFull ? true : false}
       leftSection={leftSection}
       rightSection={rightSection}
@@ -33,4 +33,4 @@ const PrimaryButton = ({
   )
 }
 
-export default PrimaryButton
+export default SecondaryButton

@@ -6,6 +6,8 @@ import { Stepper, Button, Group } from '@mantine/core'
 import { Metadata } from '@redwoodjs/web'
 
 import PageBanner from 'src/components/PageBanner/PageBanner'
+import PrimaryButton from 'src/components/PrimaryButton/PrimaryButton'
+import SecondaryButton from 'src/components/SecondaryButton/SecondaryButton'
 
 const SellACarPage = () => {
   const [active, setActive] = useState(1)
@@ -56,22 +58,8 @@ const SellACarPage = () => {
         </Stepper>
 
         <Group justify="center" mt="xl">
-          <Button
-            radius="md"
-            className="border border-primary text-primary hover:bg-primary hover:text-white"
-            variant="outline"
-            onClick={prevStep}
-          >
-            Back
-          </Button>
-          <Button
-            radius="md"
-            className="border border-primary bg-primary text-white hover:bg-transparent hover:text-primary"
-            variant="fill"
-            onClick={nextStep}
-          >
-            Next step
-          </Button>
+          <SecondaryButton title="Back" onClick={prevStep} />
+          <PrimaryButton title="Next" onClick={nextStep} />
         </Group>
       </div>
     </>

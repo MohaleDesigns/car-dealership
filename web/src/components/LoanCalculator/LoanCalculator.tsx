@@ -2,7 +2,7 @@ import { Text } from '@mantine/core'
 
 import FormInputOptions from '../Form/FormInputOptions/FormInputOptions'
 import FormTextInput from '../Form/FormTextInput/FormTextInput'
-import PrimaryButton from '../PrimaryButton/PrimaryButton'
+import SecondaryButton from '../SecondaryButton/SecondaryButton'
 
 const LoanCalculator = () => {
   return (
@@ -42,7 +42,7 @@ const LoanCalculator = () => {
       </div>
 
       {/* Button  */}
-      <PrimaryButton title="Get quick finance" isWidthFull />
+      <SecondaryButton title="Get quick finance" isWidthFull />
     </div>
   )
 }

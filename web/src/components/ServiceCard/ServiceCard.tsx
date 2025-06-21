@@ -31,7 +31,7 @@ const ServiceCard = ({
           <p className="mb-5 text-xs text-white md:text-xs">{description}</p>
           <PrimaryButton
             title={buttonText}
-            rightIcon={
+            rightSection={
               <ArrowForwardRoundedIcon
                 fontSize="small"
                 className="text-white"

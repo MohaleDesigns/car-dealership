@@ -139,7 +139,7 @@ const LandingPage = () => {
             onClick={() => {
               customNavigate(routes.carDetails())
             }}
-            rightIcon={
+            rightSection={
               <ArrowForwardRoundedIcon
                 fontSize="small"
                 className="text-white"
