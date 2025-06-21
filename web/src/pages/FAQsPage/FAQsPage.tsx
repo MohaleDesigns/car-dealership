@@ -3,6 +3,8 @@ import { Badge, Accordion } from '@mantine/core'
 
 import { Metadata } from '@redwoodjs/web'
 
+import PageBanner from 'src/components/PageBanner/PageBanner'
+
 import classes from './FAQs.module.css'
 
 const faqs = [
@@ -46,25 +48,12 @@ const FaQsPage = () => {
       <Metadata title="FAQs" description="FAQs page" />
 
       {/* ==================== BANNER ==================== */}
-      <div className="banner-background relative mb-10 bg-primary">
-        {/* Background Overlay */}
-        <div className="absolute z-10 h-full w-full bg-gradient-to-r from-[rgba(0,0,0,0.6)] to-[rgba(0,0,0,0.1)]"></div>
-
-        <div className="container relative z-20 mx-auto px-5 py-28">
-          <div className="mb-3 text-center">
-            <Badge color="#11BEA7" radius="md" variant="light">
-              200, 000+ cars to pick from
-            </Badge>
-          </div>
-          <h4 className="mb-3 text-center text-3xl font-bold text-white md:text-5xl">
-            Frequently Asked Questions
-          </h4>
-          <p className="mx-auto w-full text-center text-xs text-white/80 md:w-[60%] md:text-base">
-            Your premier destination for high-quality vehicles. Explore our
-            extensive inventory and find your dream car today.
-          </p>
-        </div>
-      </div>
+      <PageBanner
+        funFact="9 offices across South Africa"
+        title="Frequently Asked Questions"
+        subTitle="Your premier destination for high-quality vehicles. Explore our
+            extensive inventory and find your dream car today."
+      />
 
       {/* ==================== CONTENT BODY ==================== */}
       <div className="container mx-auto px-5 pb-16 pt-10 ">

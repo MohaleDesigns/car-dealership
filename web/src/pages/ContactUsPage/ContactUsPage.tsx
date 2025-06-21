@@ -5,6 +5,7 @@ import { Metadata } from '@redwoodjs/web'
 
 import FormTextInput from 'src/components/Form/FormTextInput/FormTextInput'
 import FormTextTextarea from 'src/components/Form/FormTextTextarea/FormTextTextarea'
+import PageBanner from 'src/components/PageBanner/PageBanner'
 
 import BuyersIcon from '../../assets/images/illustrations/icon_buyers_guide.svg'
 import BuyingIcon from '../../assets/images/illustrations/icon_buying.svg'
@@ -16,28 +17,15 @@ const ContactUsPage = () => {
       <Metadata title="ContactUs" description="ContactUs page" />
 
       {/* ==================== BANNER ==================== */}
-      <div className="banner-background relative mb-10 bg-primary">
-        {/* Background Overlay */}
-        <div className="absolute z-10 h-full w-full bg-gradient-to-r from-[rgba(0,0,0,0.6)] to-[rgba(0,0,0,0.1)]"></div>
-
-        <div className="container relative z-20 mx-auto px-5 py-28">
-          <div className="mb-3 text-center">
-            <Badge color="#11BEA7" radius="md" variant="light">
-              200, 000+ cars to pick from
-            </Badge>
-          </div>
-          <h4 className="mb-3 text-center text-3xl font-bold text-white md:text-5xl">
-            Contact Us
-          </h4>
-          <p className="mx-auto w-full text-center text-xs text-white/80 md:w-[60%] md:text-base">
-            Need assistance with buying or selling a car? Don&apos;t worry we
-            got you, contact us.
-          </p>
-        </div>
-      </div>
+      <PageBanner
+        funFact="7+ years of experience"
+        title="Contact Us"
+        subTitle=" Need assistance with buying or selling a car? Don't worry we
+            got you, contact us."
+      />
 
       {/* ==================== FORM ==================== */}
-      <div className="bg-background container relative z-10 mx-auto flex w-full flex-col gap-3 rounded-lg p-5 px-5 py-10 sm:grid sm:gap-5 md:-mb-20 md:mt-10 md:flex md:w-[70%] md:flex-col md:gap-3 md:p-16 md:shadow-lg lg:grid lg:grid-cols-2 lg:gap-5">
+      <div className="container relative z-10 mx-auto flex w-full flex-col gap-3 rounded-lg bg-background p-5 px-5 py-10 sm:grid sm:gap-5 md:-mb-20 md:mt-10 md:flex md:w-[70%] md:flex-col md:gap-3 md:p-16 md:shadow-lg lg:grid lg:grid-cols-2 lg:gap-5">
         <FormTextInput
           label="Email"
           placeHolder="e.g example@gmail.com"
@@ -64,7 +52,7 @@ const ContactUsPage = () => {
       {/* ==================== DETAILS & AREAS ==================== */}
       <div className="bg-primary px-5 py-10 md:py-40">
         <div className="container mx-auto flex flex-col gap-3 sm:grid sm:grid-cols-2 sm:gap-5 md:grid md:grid-cols-3 md:gap-5">
-          <div className="bg-background rounded-lg p-5">
+          <div className="rounded-lg bg-background p-5">
             <h4 className="mb-5 border-b border-primary/50 pb-4 text-xl font-bold text-primary">
               Reach Out
             </h4>
@@ -151,7 +139,7 @@ const ContactUsPage = () => {
         </div>
       </div>
 
-      <div className="bg-background container relative z-10 mx-auto flex w-full flex-col gap-10 rounded-lg px-5 py-20 sm:grid sm:gap-5 md:-mt-20 md:mb-20 md:flex md:w-[70%] md:flex-col md:gap-10 md:py-10 md:shadow-lg lg:grid lg:grid-cols-3 lg:gap-5">
+      <div className="container relative z-10 mx-auto flex w-full flex-col gap-10 rounded-lg bg-background px-5 py-20 sm:grid sm:gap-5 md:-mt-20 md:mb-20 md:flex md:w-[70%] md:flex-col md:gap-10 md:py-10 md:shadow-lg lg:grid lg:grid-cols-3 lg:gap-5">
         <div>
           <img
             src={BuyingIcon}
