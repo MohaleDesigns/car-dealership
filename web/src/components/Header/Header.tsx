@@ -21,7 +21,7 @@ const Header = () => {
     {
       icon: <TimeToLeaveIcon fontSize="small" />,
       label: 'Sell A Car',
-      // link: routes.refunds(),
+      link: routes.sellACar(),
     },
     {
       icon: <TimeToLeaveIcon fontSize="small" />,

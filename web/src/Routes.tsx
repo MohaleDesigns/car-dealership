@@ -17,6 +17,7 @@ const Routes = () => {
       <Set wrap={PublicLayout}>
         {/* Public Pages  */}
         <Route path="/" page={LandingPage} name="landing" />
+        <Route path="/sell-a-car" page={SellACarPage} name="sellACar" />
         <Route path="/faqs" page={FAQsPage} name="faQs" />
         <Route path="/contact-us" page={ContactUsPage} name="contactUs" />
       </Set>
