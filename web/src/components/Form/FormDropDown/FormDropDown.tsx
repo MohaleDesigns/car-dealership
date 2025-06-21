@@ -1,9 +1,10 @@
 import { Select, rem, Text } from '@mantine/core'
 
+type SelectItem = { label: string; value: string }
 interface Props {
-  setValue?: any
-  value?: any
-  data: any
+  setValue?: (value: string) => void
+  value?: string
+  data: SelectItem[]
   placeholder: string
   label?: string
   required?: boolean

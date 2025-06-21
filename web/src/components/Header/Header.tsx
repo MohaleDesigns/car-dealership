@@ -10,6 +10,8 @@ import LoginIcon from '@mui/icons-material/Login'
 import MenuIcon from '@mui/icons-material/Menu'
 import TimeToLeaveIcon from '@mui/icons-material/TimeToLeave'
 
+import { routes } from '@redwoodjs/router'
+
 import Logo from '../../assets/images/weeleegreen.png'
 
 const Header = () => {
@@ -47,12 +49,12 @@ const Header = () => {
     {
       icon: <LiveHelpIcon fontSize="small" />,
       label: 'FAQs',
-      // link: routes.refunds(),
+      link: routes.faQs(),
     },
     {
       icon: <ApartmentIcon fontSize="small" />,
       label: 'Contact Us',
-      // link: routes.refunds(),
+      link: routes.contactUs(),
     },
   ]
 

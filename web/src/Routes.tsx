@@ -15,7 +15,10 @@ const Routes = () => {
   return (
     <Router>
       <Set wrap={PublicLayout}>
-        <Route path="/landing" page={LandingPage} name="landing" />
+        {/* Public Pages  */}
+        <Route path="/" page={LandingPage} name="landing" />
+        <Route path="/faqs" page={FAQsPage} name="faQs" />
+        <Route path="/contact-us" page={ContactUsPage} name="contactUs" />
       </Set>
       <Route path="/car-details" page={CarDetailsPage} name="carDetails" />
       <Route notfound page={NotFoundPage} />

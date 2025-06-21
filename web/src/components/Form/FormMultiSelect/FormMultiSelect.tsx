@@ -1,9 +1,9 @@
 import { MultiSelect, rem, Text } from '@mantine/core'
 
 interface Props {
-  setValue?: any
-  value?: any
-  data: any
+  setValue?: (value: string[]) => void
+  value?: string[]
+  data: string[]
   placeholder: string
   label?: string
   required?: boolean

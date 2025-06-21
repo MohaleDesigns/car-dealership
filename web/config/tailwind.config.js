@@ -20,6 +20,7 @@ module.exports = {
         red: '#DD1B22',
         text: '#737373',
         border: '#dde1de',
+        background: '#F9F9F7',
       },
       fontFamily: {
         Montserrat: ['Montserrat', 'sans-serif'],

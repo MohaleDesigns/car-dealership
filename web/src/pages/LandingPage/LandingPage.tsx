@@ -1,5 +1,7 @@
 import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded'
 
+import { Router, routes } from '@redwoodjs/router'
+
 import Banner from 'src/components/Banner/Banner'
 import BrandsCard from 'src/components/BrandsCard/BrandsCard'
 import CarCard from 'src/components/CarCard/CarCard'
@@ -9,6 +11,7 @@ import LoanCalculator from 'src/components/LoanCalculator/LoanCalculator'
 import PrimaryButton from 'src/components/PrimaryButton/PrimaryButton'
 import ServiceCard from 'src/components/ServiceCard/ServiceCard'
 import TestimonialCard from 'src/components/TestimonialCard/TestimonialCard'
+import { customNavigate } from 'src/utils/prelineHandler'
 
 const LandingPage = () => {
   // Dummy data
@@ -133,6 +136,9 @@ const LandingPage = () => {
 
           <PrimaryButton
             title="View More"
+            onClick={() => {
+              customNavigate(routes.carDetails())
+            }}
             rightIcon={
               <ArrowForwardRoundedIcon
                 fontSize="small"

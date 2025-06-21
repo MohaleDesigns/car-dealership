@@ -1,5 +1,6 @@
-import { Text, TextInput, TextInputProps, rem } from '@mantine/core'
-interface Props extends TextInputProps {
+import { Text, Textarea, TextareaProps } from '@mantine/core'
+
+interface Props extends TextareaProps {
   value?: string
   placeHolder?: string
   setValue?: (value: string) => void
@@ -9,17 +10,21 @@ interface Props extends TextInputProps {
   validationCondition?: boolean
   validationMessage?: string
   inputTip?: string
+  minRows?: number
+  maxRows?: number
 }
-const FormTextInput = ({
+
+const FormTextTextarea = ({
   value,
   setValue,
   placeHolder,
-  type,
   label,
   required,
   validationCondition,
   validationMessage,
   inputTip,
+  minRows,
+  maxRows,
   ...rest
 }: Props) => {
   return (
@@ -37,21 +42,17 @@ const FormTextInput = ({
         required && <span className={`text-sm text-red`}>Required *</span>
       )}
       <div className="mt-1 flex w-full flex-col">
-        <TextInput
+        <Textarea
           className={
             'w-full text-primary outline-none placeholder:text-gray-400 focus:ring-transparent'
           }
-          type={type ? type : 'text'}
           value={value}
           radius="md"
-          onChange={(e) => setValue(e.target.value)}
+          onChange={(e) => setValue(e.currentTarget.value)}
           placeholder={placeHolder}
-          onScroll={undefined}
-          styles={{
-            input: {
-              height: rem(45),
-            },
-          }}
+          autosize
+          minRows={minRows}
+          maxRows={maxRows}
           {...rest}
         />
         {validationCondition == true && (
@@ -62,4 +63,4 @@ const FormTextInput = ({
   )
 }
 
-export default FormTextInput
+export default FormTextTextarea

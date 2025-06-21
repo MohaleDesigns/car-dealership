@@ -1,11 +1,9 @@
-import { useState } from 'react'
-
 import { Text, TextInputProps } from '@mantine/core'
 
 interface Props extends TextInputProps {
-  data: any
+  data: string[]
   value?: string
-  setValue?: any
+  setValue?: (value: string) => void
   label?: string
   required?: boolean
   validationCondition?: boolean
@@ -23,7 +21,6 @@ const FormInputOptions = ({
   validationMessage,
   inputTip,
 }: Props) => {
-  const [selectedTerm, setSelectedTerm] = useState('')
   return (
     <div className="w-full">
       {label != '' && label ? (
@@ -44,8 +41,8 @@ const FormInputOptions = ({
         {data.map((t, i) => (
           <button
             key={i}
-            className={`boder h-11 w-full rounded-lg border text-sm ${selectedTerm === t ? 'bg-primary text-white' : 'bg-transparent'}`}
-            onClick={() => setSelectedTerm(t)}
+            className={`boder h-11 w-full rounded-lg border text-sm ${value === t ? 'bg-primary text-white' : 'bg-transparent'}`}
+            onClick={() => setValue(t)}
           >
             {t}
           </button>
